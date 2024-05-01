@@ -5,6 +5,7 @@ public class Medicalrecords {
     String lastName;
     String birthdate;
     String medications;
+    String allergies;
 
     public String getFirstName() {
         return firstName;
@@ -22,6 +23,8 @@ public class Medicalrecords {
         return medications;
     }
 
+    public String getAllergies() { return allergies; }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -38,13 +41,18 @@ public class Medicalrecords {
         this.medications = medications;
     }
 
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
+    }
+
     @Override
     public String toString() {
-        return "Models.Medicalrecords{" +
+        return "Medicalrecords{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthdate='" + birthdate + '\'' +
                 ", medications='" + medications + '\'' +
+                ", allergies='" + allergies + '\'' +
                 '}';
     }
 }
