@@ -22,12 +22,12 @@ public class App {
 
 
         PersonsServices personsServices = new PersonsServices();
-//        System.out.println(personsServices.test());
+        System.out.println(personsServices.test());
 
 
-        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-        String json = ow.writeValueAsString(personsServices.test());
-//
-        System.out.println(json);
+//        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+//        String json = ow.writeValueAsString(personsServices.test());
+
+//        System.out.println(json);
     }
 }

@@ -3,6 +3,7 @@ package Services;
 
 import Models.Firestations;
 import Models.Person;
+import Repository.FireStationRepository;
 import Repository.PersonRepository;
 
 import java.io.IOException;
@@ -10,11 +11,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class PersonsServices {
     PersonRepository personRepository = new PersonRepository();
-    Person person = new Person();
-    Firestations firestations = new Firestations();
+    FireStationRepository fireStationRepository = new FireStationRepository();
+//    Person person = new Person();
+//    Firestations firestations = new Firestations();
 
     public void firstationNumber(){
         System.out.println("input firestation number ");
@@ -36,17 +39,24 @@ public class PersonsServices {
 
 
 
-    public Map<String,List<Person>>test() throws IOException {
+    public List<Firestations>test() throws IOException {
 
-       List<Person> persolis  = personRepository.persons();
+       List<Person> actual_Person_List = personRepository.persons();
+       List<Firestations> actual_FireStation_List = fireStationRepository.firestations();
+
+       Stream<Firestations> actual_FireStation_stream = actual_FireStation_List.stream();
+       Stream<Person> actual_person_stream = actual_Person_List.stream();
 
 
 
-         Map<String,List<Person>> map = persolis.stream()
-               .collect(Collectors.groupingBy(s->s.getAddress()));
+        List<Firestations> matchlist = actual_FireStation_stream.
+                 filter(firestations -> actual_person_stream.anyMatch(person -> person.getAddress().equals(firestations.getAddress())))
+//               .collect(Collectors.groupingBy(firestations -> firestations.getStation()));
+                .toList();
 
 
-       return  map;
+
+       return matchlist;
 
     }
 }
