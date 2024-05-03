@@ -13,7 +13,7 @@ public class PersonRepository {
     JsonReader jsonReader = new JsonReader();
 
 
-   public void persons() throws IOException {
+   public List<Person> persons() throws IOException {
        List<Person> personlist = new LinkedList<>();
         String jsonString = jsonReader.readJsonString();
        JSONObject jsonObject = new JSONObject(jsonString);
@@ -30,8 +30,8 @@ public class PersonRepository {
 
            personlist.add(person);
        }
-      for(Person person:personlist){
-          System.out.println(person);
-      }
+
+
+       return personlist;
    }
 }

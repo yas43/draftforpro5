@@ -13,7 +13,7 @@ public class MedicalRecordsRepository {
     JsonReader jsonReader = new JsonReader();
 
 
-    public void medicalrecords() throws IOException {
+    public List<Medicalrecords> medicalrecords() throws IOException {
         List<Medicalrecords> medicalrecordsList = new LinkedList<>();
         String jsonstring = jsonReader.readJsonString();
         JSONObject jsonObject = new JSONObject(jsonstring);
@@ -29,8 +29,6 @@ public class MedicalRecordsRepository {
 
             medicalrecordsList.add(medicalrecords);
         }
-        for(Medicalrecords medicalrecord:medicalrecordsList){
-            System.out.println(medicalrecord);
-        }
+     return medicalrecordsList;
     }
 }

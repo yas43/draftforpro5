@@ -14,7 +14,7 @@ public class FireStationRepository {
     List<Firestations> firestationlist = new LinkedList<>();
     JsonReader jsonReader = new JsonReader();
 
-    public void firestations() throws IOException {
+    public List<Firestations> firestations() throws IOException {
         String jsonString = jsonReader.readJsonString();
         JSONObject jsonObject = new JSONObject(jsonString);
         JSONArray firestationarray = jsonObject.getJSONArray("firestations");
@@ -25,8 +25,6 @@ public class FireStationRepository {
 
             firestationlist.add(firestations);
         }
-        for (Firestations firestation : firestationlist) {
-            System.out.println(firestation);
-        }
+      return firestationlist;
     }
 }
