@@ -1,3 +1,5 @@
+import Reader.JsonReaderFile;
+import Reader.RepoTest;
 import Repository.FireStationRepository;
 import Repository.MedicalRecordsRepository;
 import Repository.PersonRepository;
@@ -21,13 +23,24 @@ public class App {
 
 
 
-        PersonsServices personsServices = new PersonsServices();
-        System.out.println(personsServices.test());
+//        PersonsServices personsServices = new PersonsServices();
+//        System.out.println(personsServices.test());
 
 
 //        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 //        String json = ow.writeValueAsString(personsServices.test());
 
 //        System.out.println(json);
+
+//        JsonReaderFile jsonReaderFile =new JsonReaderFile();
+//        System.out.println( jsonReaderFile.JsonReaderFilePerson());
+//        System.out.println(jsonReaderFile.JsonReaderFileFireStation());
+//        System.out.println(jsonReaderFile.JsonReaderFileMedicalRecords());
+
+
+        RepoTest repoTest = new RepoTest();
+//        System.out.println( repoTest.pesonRepo());
+//        System.out.println(repoTest.firestationRepo());
+        System.out.println( repoTest.medicalrecordsRepo());
     }
 }
