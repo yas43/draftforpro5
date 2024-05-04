@@ -1,15 +1,16 @@
-package Reader;
+package Repository;
 
 import Models.Firestations;
 import Models.Medicalrecords;
 import Models.Person;
+import Reader.JsonReaderFile;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class RepoTest {
+public class Repository {
     JsonReaderFile jsonReaderFile = new JsonReaderFile();
 
     public List<Person> pesonRepo() throws IOException {
@@ -65,18 +66,14 @@ public class RepoTest {
 
             Medicalrecords medicalrecord = new Medicalrecords();
 
-//            System.out.println( medicalrecords.path(1).path("medications").path(0));
-//        System.out.println( medicalrecords.path(1).path("medications").path(1));
-//        System.out.println( medicalrecords.path(1).path("medications").path(2));
 
+            medicalrecord.setFirstName(medicalrecords.path(i).path("firstName").toString());
+            medicalrecord.setLastName(medicalrecords.path(i).path("lastName").toString());
+            medicalrecord.setBirthdate(medicalrecords.path(i).path("birthdate").toString());
+            medicalrecord.setMedications(medicalrecords.path(i).path("medications").toString());
+            medicalrecord.setAllergies(medicalrecords.path(i).path("allergies").toString());
 
-        medicalrecord.setFirstName(medicalrecords.path(i).path("firstName").toString());
-        medicalrecord.setLastName(medicalrecords.path(i).path("lastName").toString());
-        medicalrecord.setBirthdate(medicalrecords.path(i).path("birthdate").toString());
-        medicalrecord.setMedications(medicalrecords.path(i).path("medications").toString());
-        medicalrecord.setAllergies(medicalrecords.path(i).path("allergies").toString());
-
-        medicalrecordsList.add(medicalrecord);
+            medicalrecordsList.add(medicalrecord);
         }
         return medicalrecordsList;
 

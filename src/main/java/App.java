@@ -1,11 +1,6 @@
-import Reader.JsonReaderFile;
-import Reader.RepoTest;
-import Repository.FireStationRepository;
-import Repository.MedicalRecordsRepository;
-import Repository.PersonRepository;
-import Services.PersonsServices;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
+//import Services.PersonsServices;
+
+import Repository.Repository;
 
 import java.io.IOException;
 
@@ -38,9 +33,16 @@ public class App {
 //        System.out.println(jsonReaderFile.JsonReaderFileMedicalRecords());
 
 
-        RepoTest repoTest = new RepoTest();
+//        RepoTest repoTest = new RepoTest();
 //        System.out.println( repoTest.pesonRepo());
 //        System.out.println(repoTest.firestationRepo());
-        System.out.println( repoTest.medicalrecordsRepo());
+//        System.out.println( repoTest.medicalrecordsRepo());
+
+//        FireStationRepository fireStationRepository = new FireStationRepository();
+//        System.out.println( fireStationRepository.firestationRepo());
+
+
+        Repository repository = new Repository();
+        System.out.println(repository.pesonRepo());
     }
 }
