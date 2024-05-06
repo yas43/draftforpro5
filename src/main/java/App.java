@@ -1,6 +1,7 @@
 //import Services.PersonsServices;
 
 import Repository.Repository;
+import Services.PersonsServices;
 
 import java.io.IOException;
 
@@ -42,7 +43,11 @@ public class App {
 //        System.out.println( fireStationRepository.firestationRepo());
 
 
-        Repository repository = new Repository();
-        System.out.println(repository.pesonRepo());
+//        Repository repository = new Repository();
+//        System.out.println(repository.pesonRepo());
+
+        PersonsServices personsServices = new PersonsServices();
+        System.out.println( personsServices.numberOfKids());
+
     }
 }
