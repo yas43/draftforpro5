@@ -1,6 +1,6 @@
 package DTO;
 
-public class personnesCouvertesParCaserne {
+public class PersonnesCouvertesParCaserne {
     String firstName;
     String lastName;
     String adresse;

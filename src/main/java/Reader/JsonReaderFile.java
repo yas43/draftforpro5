@@ -10,32 +10,45 @@ public class JsonReaderFile {
     private static ObjectMapper mapper = new ObjectMapper();
 
     public JsonNode JsonReaderFilePerson() throws IOException {
-        InputStream exampleInput =
+        InputStream Input =
                 JsonReaderFile.class.getClassLoader()
                         .getResourceAsStream("data.json");
 
-        JsonNode rootNode = mapper.readTree(exampleInput);
+        JsonNode rootNode = mapper.readTree(Input);
         return rootNode.path("persons");
 
     }
 
     public JsonNode JsonReaderFileFireStation() throws IOException {
-        InputStream exampleInput =
+        InputStream Input =
                 JsonReaderFile.class.getClassLoader()
                         .getResourceAsStream("data.json");
 
-        JsonNode rootNode = mapper.readTree(exampleInput);
+        JsonNode rootNode = mapper.readTree(Input);
         return rootNode.path("firestations");
 
     }
 
     public JsonNode JsonReaderFileMedicalRecords() throws IOException {
-        InputStream exampleInput =
+        InputStream Input =
                 JsonReaderFile.class.getClassLoader()
                         .getResourceAsStream("data.json");
 
-        JsonNode rootNode = mapper.readTree(exampleInput);
+        JsonNode rootNode = mapper.readTree(Input);
         return rootNode.path("medicalrecords");
 
     }
+
+
+    public JsonNode JsonReaderFileAll() throws IOException {
+        InputStream Input =
+                JsonReaderFile.class.getClassLoader()
+                        .getResourceAsStream("data.json");
+
+        JsonNode rootNode = mapper.readTree(Input);
+        return rootNode;
+
+    }
+
+
 }

@@ -1,29 +1,25 @@
 package Services;
 
 
-import DTO.personnesCouvertesParCaserne;
+import DTO.PersonnesCouvertesParCaserne;
 import Models.Medicalrecords;
 import Models.Person;
 import Reader.JsonReaderFile;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 public class PersonsServices {
     JsonReaderFile jsonReaderFile = new JsonReaderFile();
 
-    private void convertEntityToDTO(Medicalrecords medicalrecords,Person person) throws IOException {
-        personnesCouvertesParCaserne personnesCouvertesParCaserne = new personnesCouvertesParCaserne();
+    private void convertEntityToDTO() throws IOException {
+        PersonnesCouvertesParCaserne personnesCouvertesParCaserne = new PersonnesCouvertesParCaserne();
 //        PersonsServices personsServices = new PersonsServices();
-        personnesCouvertesParCaserne.setFirstName(medicalrecords.getFirstName());
-        personnesCouvertesParCaserne.setLastName(medicalrecords.getLastName());
-        personnesCouvertesParCaserne.setAdresse(person.getAddress());
-        personnesCouvertesParCaserne.setPhone(person.getPhone());
-        personnesCouvertesParCaserne.setNumberOfAdults(counterOfAdult(medicalrecords));
+//        personnesCouvertesParCaserne.setFirstName(medicalrecords.getFirstName());
+//        personnesCouvertesParCaserne.setLastName(medicalrecords.getLastName());
+//        personnesCouvertesParCaserne.setAdresse(person.getAddress());
+//        personnesCouvertesParCaserne.setPhone(person.getPhone());
+//        personnesCouvertesParCaserne.setNumberOfAdults(counterOfAdult(medicalrecords));
 //        personnesCouvertesParCaserne.setNumberOfAdults(personsServices.numberOfAdult());
 //        personnesCouvertesParCaserne.setNumberOfKids(personsServices.numberOfKids());
     }

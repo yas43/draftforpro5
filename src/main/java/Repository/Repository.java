@@ -1,5 +1,6 @@
 package Repository;
 
+import DTO.PersonnesCouvertesParCaserne;
 import Models.Firestations;
 import Models.Medicalrecords;
 import Models.Person;
@@ -78,4 +79,36 @@ public class Repository {
         return medicalrecordsList;
 
     }
-}
+
+//    public List<PersonnesCouvertesParCaserne> coveredpersonsRepo() throws IOException {
+//
+//        List<PersonnesCouvertesParCaserne> couvertesParCasernes = new LinkedList<>();
+//        JsonNode medicalrecords = jsonReaderFile.JsonReaderFileMedicalRecords();
+//        JsonNode person = jsonReaderFile.JsonReaderFilePerson();
+//
+//        for (int i = 0; i < medicalrecords.size(); i++) {
+//
+//                PersonnesCouvertesParCaserne personnesCouvertesParCaserne = new PersonnesCouvertesParCaserne();
+//            Medicalrecords medicalrecord = new Medicalrecords();
+//            Person person = new Person();
+
+
+//            personnesCouvertesParCaserne.setFirstName(medicalrecords.path(i).path("firstName").toString());
+//            personnesCouvertesParCaserne.setLastName(medicalrecords.path(i).path("lastName").toString());
+//            personnesCouvertesParCaserne.setAdresse(person.path(i).path("birthday").toString());
+//            personnesCouvertesParCaserne.setPhone(person.path(i).path("phone").toString());
+//            personnesCouvertesParCaserne.setNumberOfAdults();
+//            personnesCouvertesParCaserne.setBirthdate(medicalrecords.path(i).path("birthdate").toString());
+//            personnesCouvertesParCaserne.setMedications(medicalrecords.path(i).path("medications").toString());
+//            personnesCouvertesParCaserne.setAllergies(medicalrecords.path(i).path("allergies").toString());
+
+//            medicalrecordsList.add(medicalrecord);
+//        }
+//        return medicalrecordsList;
+
+    }
+
+
+
+
+//}
