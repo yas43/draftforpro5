@@ -1,12 +1,23 @@
 package DTO;
 
+import Reader.JsonReaderFile;
+import com.fasterxml.jackson.databind.JsonNode;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
 public class PersonnesCouvertesParCaserne {
     String firstName;
     String lastName;
     String adresse;
     String phone;
-    int numberOfAdults;
-    int numberOfKids;
+    boolean isAdults;
+    boolean isKids;
+    String numberOfAdults;
+    String numberOfKids;
 
     public String getFirstName() {
         return firstName;
@@ -24,13 +35,7 @@ public class PersonnesCouvertesParCaserne {
         return phone;
     }
 
-    public int getNumberOfAdults() {
-        return numberOfAdults;
-    }
 
-    public int getNumberOfKids() {
-        return numberOfKids;
-    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -48,23 +53,77 @@ public class PersonnesCouvertesParCaserne {
         this.phone = phone;
     }
 
-    public void setNumberOfAdults(int numberOfAdults) {
+    public void setNumberOfAdults(String numberOfAdults) {
         this.numberOfAdults = numberOfAdults;
     }
 
-    public void setNumberOfKids(int numberOfKids) {
+    public void setNumberOfKids(String numberOfKids) {
         this.numberOfKids = numberOfKids;
     }
 
+    private boolean isAdults(JsonNode person) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("\"MM/dd/yyyy\"", Locale.ENGLISH);
+        LocalDate currentDate = LocalDate.now();
+        LocalDate personBirthdate = LocalDate.parse(person.path("birthdate").toString(), formatter);
+        int age = Period.between(personBirthdate, currentDate).getYears();
+        return age > 18;
+
+    }
+
+    private boolean isKids(JsonNode person) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("\"MM/dd/yyyy\"", Locale.ENGLISH);
+        LocalDate currentDate = LocalDate.now();
+        LocalDate personBirthdate = LocalDate.parse(person.path("birthdate").toString(), formatter);
+        int age = Period.between(personBirthdate, currentDate).getYears();
+        return age < 18;
+
+    }
+
+public void numberOfAdults() throws IOException {
+    JsonReaderFile jsonReaderFile = new JsonReaderFile();
+        PersonnesCouvertesParCaserne personnesCouvertesParCaserne = new PersonnesCouvertesParCaserne();
+    int counter = 0;
+            for (JsonNode medicalrecord:jsonReaderFile.JsonReaderFileMedicalRecords()){
+                if(personnesCouvertesParCaserne.isAdults(medicalrecord)){
+                    counter++;
+
+                }
+
+            }
+
+
+        setNumberOfAdults( "number of Adult is " +counter);
+}
+
+
+    public void numberOfKids() throws IOException {
+        JsonReaderFile jsonReaderFile = new JsonReaderFile();
+        PersonnesCouvertesParCaserne personnesCouvertesParCaserne = new PersonnesCouvertesParCaserne();
+        int counter = 0;
+        for (JsonNode medicalrecord:jsonReaderFile.JsonReaderFileMedicalRecords()){
+            if(personnesCouvertesParCaserne.isKids(medicalrecord)){
+                counter++;
+
+            }
+
+        }
+
+
+        setNumberOfKids("number of kids is " +counter);
+    }
+
+
+
+
     @Override
     public String toString() {
-        return "ListePersonnesCouvertesParCaserne{" +
+        return "PersonnesCouvertesParCaserne{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", adresse='" + adresse + '\'' +
                 ", phone='" + phone + '\'' +
-                ", numberOfAdults=" + numberOfAdults +
-                ", numberOfKids=" + numberOfKids +
+                ", numberOfAdults='" + numberOfAdults + '\'' +
+                ", numberOfKids='" + numberOfKids + '\'' +
                 '}';
     }
 }

@@ -80,35 +80,37 @@ public class Repository {
 
     }
 
-//    public List<PersonnesCouvertesParCaserne> coveredpersonsRepo() throws IOException {
+//    public List<PersonnesCouvertesParCaserne> coveredpersonsRepo(int stationnumber) throws IOException {
 //
 //        List<PersonnesCouvertesParCaserne> couvertesParCasernes = new LinkedList<>();
-//        JsonNode medicalrecords = jsonReaderFile.JsonReaderFileMedicalRecords();
-//        JsonNode person = jsonReaderFile.JsonReaderFilePerson();
+//        JsonNode fireStations = jsonReaderFile.JsonReaderFileFireStation();
+//        //        JsonNode medicalrecords = jsonReaderFile.JsonReaderFileMedicalRecords();
+//        JsonNode persons = jsonReaderFile.JsonReaderFilePerson();
 //
-//        for (int i = 0; i < medicalrecords.size(); i++) {
 //
-//                PersonnesCouvertesParCaserne personnesCouvertesParCaserne = new PersonnesCouvertesParCaserne();
-//            Medicalrecords medicalrecord = new Medicalrecords();
-//            Person person = new Person();
-
-
-//            personnesCouvertesParCaserne.setFirstName(medicalrecords.path(i).path("firstName").toString());
-//            personnesCouvertesParCaserne.setLastName(medicalrecords.path(i).path("lastName").toString());
-//            personnesCouvertesParCaserne.setAdresse(person.path(i).path("birthday").toString());
-//            personnesCouvertesParCaserne.setPhone(person.path(i).path("phone").toString());
-//            personnesCouvertesParCaserne.setNumberOfAdults();
-//            personnesCouvertesParCaserne.setBirthdate(medicalrecords.path(i).path("birthdate").toString());
-//            personnesCouvertesParCaserne.setMedications(medicalrecords.path(i).path("medications").toString());
-//            personnesCouvertesParCaserne.setAllergies(medicalrecords.path(i).path("allergies").toString());
-
-//            medicalrecordsList.add(medicalrecord);
+//
+//        Person person1 = new Person();
+//        String firestationnumberstring = String.valueOf(stationnumber);
+//        for (int i = 0; i < fireStations.size(); i++) {
+//            if (fireStations.path(i).path("station").asText().equals(firestationnumberstring)) {
+//                for (int j = 0; j < persons.size(); j++) {
+//                    PersonnesCouvertesParCaserne personnesCouvertesParCaserne = new PersonnesCouvertesParCaserne();
+//                    if (persons.path(j).path("address").equals(fireStations.path(i).path("address"))) {
+//
+//                        personnesCouvertesParCaserne.setFirstName(persons.path(j).path("firstName").toString());
+//                        personnesCouvertesParCaserne.setLastName(persons.path(j).path("lastName").toString());
+//                        personnesCouvertesParCaserne.setAdresse(persons.path(j).path("address").toString());
+//                        personnesCouvertesParCaserne.setPhone(persons.path(j).path("phone").toString());
+//
+//                        couvertesParCasernes.add(personnesCouvertesParCaserne);
+//                    }
+////                                        System.out.println(persons.path(j).path("firstName"));
+//
+//                }
+//            }
 //        }
-//        return medicalrecordsList;
-
-    }
-
+//        return couvertesParCasernes;
+//    }
 
 
-
-//}
+}
