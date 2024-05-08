@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class PersonnesCouvertesParCaserne {
+public class PersonnesCouvertesParCaserneServices {
     JsonReaderFile jsonReaderFile = new JsonReaderFile();
 
     public List<DTO.PersonnesCouvertesParCaserne> coveredpersonsRepo(int stationnumber) throws IOException {

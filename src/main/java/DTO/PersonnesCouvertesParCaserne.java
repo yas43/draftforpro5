@@ -61,7 +61,7 @@ public class PersonnesCouvertesParCaserne {
         this.numberOfKids = numberOfKids;
     }
 
-    private boolean isAdults(JsonNode person) {
+    public boolean isAdults(JsonNode person) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("\"MM/dd/yyyy\"", Locale.ENGLISH);
         LocalDate currentDate = LocalDate.now();
         LocalDate personBirthdate = LocalDate.parse(person.path("birthdate").toString(), formatter);
@@ -70,7 +70,7 @@ public class PersonnesCouvertesParCaserne {
 
     }
 
-    private boolean isKids(JsonNode person) {
+    public boolean isKids(JsonNode person) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("\"MM/dd/yyyy\"", Locale.ENGLISH);
         LocalDate currentDate = LocalDate.now();
         LocalDate personBirthdate = LocalDate.parse(person.path("birthdate").toString(), formatter);
