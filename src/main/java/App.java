@@ -1,73 +1,58 @@
 //import Services.PersonsServices;
 
+import Models.Firestations;
+import Models.Medicalrecords;
 import Models.Person;
+import Repository.*;
+import Services.*;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import org.json.JSONArray;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.StringWriter;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) throws IOException {
 
-//        HabitantsParAdressService habitantsParAdressService = new HabitantsParAdressService();
-//        String adress = "1509 Culver St";
-//        System.out.println(  habitantsParAdressService.personaddress(adress));
 
-
-//        AdressParCasernServices adressParCasernServices = new AdressParCasernServices();
-//        System.out.println( adressParCasernServices.addresseesForFireStation(2));
-
-
-//        PersonInfoServices personInfoServices = new PersonInfoServices();
-//        System.out.println( personInfoServices.personInfo("Sophia","Zemicks"));
-
-
-//        CommunityEmailServices communityEmailServices = new CommunityEmailServices();
-//        System.out.println(communityEmailServices.communityEmail("Culver"));
-
-
-//        JsonReaderFile jsonReaderFile = new JsonReaderFile();
-
-
-
-
-
-
-//        System.out.println(arrNode);
-//        for(int i=0;i<jsonReaderFile.JsonReaderFilePerson().size();i++) {
-//            ObjectNode objectNode = jsonReaderFile.JsonReaderFilePerson().path(i).deepCopy();
-//            if (jsonReaderFile.JsonReaderFilePerson().path(i).path("firstName").asText().equals("John")){
-//                objectNode.put("email","ykeshtdar@yahoo.com");
+//        JSONArray jsonArray1 = new JSONArray(FireStationRepository.firestationsList);
 //
-////                objectNode.set("ali","mamali","1 ue condat","clorado","1234","235689741","zizigolo@yahoo.com");
-//                objectNode.remove("lastName");
-//                objectNode.putObject("age");
-//                objectNode.putArray("serialNumber");
-//
-//
-//                ObjectMapper mapper = new ObjectMapper();
-//                String json = mapper.writeValueAsString(objectNode);
-//                JsonNode jsonNode = mapper.readTree(json);
-//                System.out.println(jsonNode);
-//            }
-
-//            System.out.println(objectNode);
-
-//        }
-
-        Person person = new Person("ali","keshtdar","4th aryashahr","teheran","14567","44126190","akeshtadr@yahoo.com");
 //        ObjectMapper mapper = new ObjectMapper();
-//        String json = mapper.writeValueAsString(object);
-//        JsonNode jsonNode = mapper.readTree(json);
-
-//        JsonNode node = mapper.valueToTree(person);
+//        ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+//        writer.writeValue(new File("C:/Users/yaser/IdeaProjects/simplemavendraftjson/src/main/resources/dataTwo.json"), jsonArray1);
 
 
-//        for(int i=0;i<jsonReaderFile.JsonReaderFilePerson().size();i++) {
-//            ObjectNode objectNode = jsonReaderFile.JsonReaderFilePerson().path(i).deepCopy();
-//            objectNode.putObject(person.toString());
-//            ObjectMapper mapper = new ObjectMapper();
-//            String json = mapper.writeValueAsString(objectNode);
-//            JsonNode newjsonNodeperson = mapper.readTree(json);
-//        }
+//        PostPerson postPerson = new PostPerson();
+//        Person person = new Person("ali","keshtdar","aryashahr","tehran","13413","44128541","akeshtdar@yahoo.com");
+//        System.out.println(postPerson.postPerson(person));
+
+//        UpdatrPerson updatrPerson = new UpdatrPerson();
+//        Person person1 = new Person("John","Boyd","","tehran","13413","44128541","akeshtdar@yahoo.com");
+//        System.out.println(updatrPerson.updatrPerson(person1));
+
+//        DeletePerson deletePerson = new DeletePerson();
+//        Person person1 = new Person("John","Boyd","","tehran","13413","44128541","akeshtdar@yahoo.com");
+//        System.out.println(deletePerson.deletPerson(person1));
+
+
+//        PostFireStation postFireStation = new PostFireStation();
+//        Firestations firestations_new = new Firestations("saadatabad","12");
+//        System.out.println( postFireStation.addFireStation(firestations_new));
+
+
+//        UpdateFireStation updateFireStation = new UpdateFireStation();
+//                Firestations firestations_new = new Firestations("112 Steppes Pl","303");
+//        System.out.println(    updateFireStation.updateFireStations(firestations_new));
+
+
+        DeletFireStation deletFireStation = new DeletFireStation();
+        Firestations firestations_new = new Firestations("","3");
+        System.out.println(deletFireStation.deleteFireStations(firestations_new));
+
 
 
     }

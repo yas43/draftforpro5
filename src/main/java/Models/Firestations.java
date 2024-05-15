@@ -4,6 +4,14 @@ public class Firestations {
     String address;
     String station;
 
+    public Firestations(String address, String station) {
+        this.address = address;
+        this.station = station;
+    }
+
+    public Firestations() {
+    }
+
     public String getAddress() {
         return address;
     }
