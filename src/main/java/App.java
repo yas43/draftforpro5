@@ -49,9 +49,27 @@ public class App {
 //        System.out.println(    updateFireStation.updateFireStations(firestations_new));
 
 
-        DeletFireStation deletFireStation = new DeletFireStation();
-        Firestations firestations_new = new Firestations("","3");
-        System.out.println(deletFireStation.deleteFireStations(firestations_new));
+//        DeletFireStation deletFireStation = new DeletFireStation();
+//        Firestations firestations_new = new Firestations("","3");
+//        System.out.println(deletFireStation.deleteFireStations(firestations_new));
+
+
+//        PostMedicalRecord postMedicalRecord = new PostMedicalRecord();
+//        Medicalrecords new_medicalrecords = new Medicalrecords("hajghasem","kotlet","05/29/1790","[mirzaghasemi:5boshghab,zahremar:2 livan]","[kahir:kafdast]");
+//        System.out.println( postMedicalRecord.addMedicalRecords(new_medicalrecords));
+
+
+//        UpdateMedicalRecord updateMedicalRecord = new UpdateMedicalRecord();
+//        Medicalrecords new_medicalrecords = new Medicalrecords("Lily","Cooper","05/29/1790","[mirzaghasemi:5boshghab,zahremar:2 livan]","[kahir:kafdast]");
+//        Medicalrecords new_medicalrecords = new Medicalrecords("Lily","Cooper","","[mirzaghasemi:5boshghab,zahremar:2 livan]","[kahir:kafdast]");
+//
+//        System.out.println(updateMedicalRecord.updatMedicalRecords(new_medicalrecords));
+
+
+
+//        DeleteMedicalRecord deleteMedicalRecord = new DeleteMedicalRecord();
+//        Medicalrecords new_medicalrecords = new Medicalrecords("Ron","Peters","","[mirzaghasemi:5boshghab,zahremar:2 livan]","[kahir:kafdast]");
+//        System.out.println(deleteMedicalRecord.deletMedicalRecrd(new_medicalrecords));
 
 
 
