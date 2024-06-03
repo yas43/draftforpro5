@@ -51,7 +51,7 @@ public class JsonReaderFile {
     }
 public void test(){
     System.out.println("this is jus a test");
-    System.out.println("my name is yaser");
+
 }
 
 }
