@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="draftpro5" />
+        <module name="simplemavendraftjson" />
       </profile>
     </annotationProcessing>
   </component>

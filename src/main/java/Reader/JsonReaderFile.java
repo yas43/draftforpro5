@@ -49,6 +49,8 @@ public class JsonReaderFile {
         return rootNode;
 
     }
-
+public void test(){
+    System.out.println("just for testing");
+}
 
 }
