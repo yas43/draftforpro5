@@ -51,6 +51,7 @@ public class JsonReaderFile {
     }
 public void test(){
     System.out.println("just for testing");
+    System.out.println("just for test");
 }
 
 }
